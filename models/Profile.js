@@ -18,8 +18,7 @@ const ProfileSchema = new Schema({
     type: String
   },
   style: {
-    type: String,
-    required: true
+    type: String
   },
   bio: {
     type: String
