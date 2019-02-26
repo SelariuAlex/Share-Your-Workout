@@ -58,7 +58,7 @@ body {
 /* banner */
 
 .banner {
-  min-height: 90vh;
+  min-height: 85vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
     url(./img/landing.jpeg);
   background-position: center;
@@ -97,6 +97,7 @@ body {
   padding: 1rem;
   border-radius: 1rem;
   border: none;
+  text-decoration: none;
 }
 
 .banner__btn--blue {
@@ -241,4 +242,13 @@ body {
   .profile__picure {
     height: 15rem;
   }
+}
+
+/* footer */
+
+.footer {
+  text-align: center;
+  background: #212121;
+  color: #f5f5f5;
+  padding: 1rem;
 }
