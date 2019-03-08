@@ -12,27 +12,29 @@ class Landing extends Component {
 
   render() {
     return (
-      <header className="banner">
-        <div className="banner__title">
-          <h1 className="banner__text">Your Workout</h1>
-          <h2 className="banner__subtext">
-            Share your workout with the world and inspire oders and learn from
-            experience.
-          </h2>
-          <div className="banner__btn">
-            <Link
-              className="btn banner__btn--blue"
-              type="button"
-              to="/register"
-            >
-              Sign Up
-            </Link>
-            <Link className="btn banner__btn--green" type="button" to="/login">
-              Login
-            </Link>
+      <div className="landing">
+        <div className="dark-overlay landing-inner text-light">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h1 className="display-3 mb-4">Your Workout</h1>
+                <p className="lead">
+                  {' '}
+                  Share your workout with the world and inspire oders and learn
+                  from experience
+                </p>
+                <hr />
+                <Link to="/register" className="btn btn-lg btn-info mr-2">
+                  Sign Up
+                </Link>
+                <Link to="/login" className="btn btn-lg btn-light">
+                  Login
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
+      </div>
     );
   }
 }

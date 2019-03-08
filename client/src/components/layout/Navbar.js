@@ -13,61 +13,81 @@ class Navbar extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
-
-    const guestLinks = (
-      <ul>
-        <li>
-          <Link className="navbar--btn" to="/register">
-            Sign Up
-          </Link>
-        </li>
-        <li>
-          <Link className="navbar--btn" to="/login">
-            Login
-          </Link>
-        </li>
-      </ul>
-    );
+    const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul>
-        <li>
-          <Link className="navbar--btn" to="/feed">
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/feed">
             Post Feed
           </Link>
         </li>
-        <li>
-          <Link className="navbar--btn" to="/dashboard">
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
             Dashboard
           </Link>
         </li>
-        <li>
+        <li className="nav-item">
           <button
+            href=""
             onClick={this.onLogoutClick.bind(this)}
-            className="navbar--btn logout--btn"
+            className="nav-link logout-btn"
           >
+            <img
+              className="rounded-circle"
+              src={user.avatar}
+              alt={user.name}
+              style={{ width: '25px', marginRight: '5px' }}
+              title="You must have a Gravatar connected to your email to display an image"
+            />{' '}
             Logout
           </button>
         </li>
       </ul>
     );
 
+    const guestLinks = (
+      <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/register">
+            Sign Up
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/login">
+            Login
+          </Link>
+        </li>
+      </ul>
+    );
+
     return (
-      <nav className="navbar">
-        <ul>
-          <li>
-            <Link className="navbar--logo navbar--btn" to="/">
-              Share Your Workout
-            </Link>
-          </li>
-          <li>
-            <Link className="navbar--btn" to="/">
-              Members
-            </Link>
-          </li>
-        </ul>
-        {isAuthenticated ? authLinks : guestLinks}
+      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            ShareYourWorkout
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#mobile-nav"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+
+          <div className="collapse navbar-collapse" id="mobile-nav">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/profiles">
+                  {' '}
+                  Members
+                </Link>
+              </li>
+            </ul>
+            {isAuthenticated ? authLinks : guestLinks}
+          </div>
+        </div>
       </nav>
     );
   }

@@ -1,11 +1,9 @@
 import React from 'react';
 
-function Footer() {
+export default () => {
   return (
-    <footer className="footer">
-      Copyright &copy; {new Date().getFullYear()} Selariu Alexandru
+    <footer className="bg-dark text-white mt-5 p-4 text-center">
+      Copyright &copy; {new Date().getFullYear()} Șelariu Alexandru
     </footer>
   );
-}
-
-export default Footer;
+};
