@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
+import TextFieldGroup from '../common/TextFieldGroup';
 
 class Register extends Component {
   state = {
@@ -43,54 +44,52 @@ class Register extends Component {
   };
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div className="register">
         <div className="container">
-          <h1 className="form__title">Sign Up</h1>
-          <p className="form__subtitle">Create your workout account</p>
-          <form onSubmit={this.onSubmit}>
-            <div className="register__forms">
-              <input
-                type="text"
-                className="form__input"
-                placeholder="Name"
-                name="name"
-                value={this.state.name}
-                onChange={this.onChange}
-              />
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Sign Up</h1>
+              <p className="lead text-center">Create your account</p>
+              <form noValidate onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="Name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.onChange}
+                  error={errors.name}
+                />
+                <TextFieldGroup
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}
+                  info="This site uses Gravatar so if you want a profile image, use a Gravatar email"
+                />
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                />
+                <TextFieldGroup
+                  placeholder="Confirm Password"
+                  name="password2"
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.onChange}
+                  error={errors.password2}
+                />
+                <input type="submit" className="btn btn-info btn-block mt-4" />
+              </form>
             </div>
-            <div className="register__forms">
-              <input
-                type="email"
-                className="form__input"
-                placeholder="Email Address"
-                name="email"
-                value={this.state.email}
-                onChange={this.onChange}
-              />
-            </div>
-            <div className="register__forms">
-              <input
-                type="password"
-                className="form__input"
-                placeholder="Password"
-                name="password"
-                value={this.state.password}
-                onChange={this.onChange}
-              />
-            </div>
-            <div className="register__forms">
-              <input
-                type="password"
-                className="form__input"
-                placeholder="Confirm Password"
-                name="password2"
-                value={this.state.password2}
-                onChange={this.onChange}
-              />
-            </div>
-            <input type="submit" className="btn form--btn" />
-          </form>
+          </div>
         </div>
       </div>
     );
