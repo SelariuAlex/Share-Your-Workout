@@ -19,6 +19,7 @@ import EditProfile from './components/edit-profile/EditProfile';
 import AddWorkout from './components/add-workout/AddWorkout';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import NotFound from './components/not-found/NotFound';
 
 import './App.css';
 
@@ -67,6 +68,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/add-workout" component={AddWorkout} />
             </Switch>
+            <Route exact path="/not-found" component={NotFound} />
             <Footer />
           </div>
         </Router>
