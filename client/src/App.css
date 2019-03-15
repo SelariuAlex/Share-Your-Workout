@@ -52,3 +52,7 @@ footer {
 .logout-btn {
   color: black !important;
 }
+
+.fixSpace {
+  white-space: pre-wrap;
+}

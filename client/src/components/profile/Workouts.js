@@ -8,7 +8,7 @@ class Workouts extends Component {
       <li key={work._id} className="list-group-item">
         <h4>{work.title}</h4>
 
-        <div>{`${work.exersise}`}</div>
+        <p className="fixSpace">{`${work.exersise}`}</p>
       </li>
     ));
 
