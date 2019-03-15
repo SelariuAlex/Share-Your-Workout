@@ -10,14 +10,11 @@ const posts = require('./routes/api/posts');
 
 const app = express();
 
-// Body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// DB config
 const db = require('./config/keys').mongoURI;
 
-// Connect to MongoDB
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Connected'))
