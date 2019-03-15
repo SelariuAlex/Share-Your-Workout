@@ -6,7 +6,7 @@ class Workouts extends Component {
 
     const workItems = workout.map(work => (
       <li key={work._id} className="list-group-item">
-        <h4 className="text-info">{work.title}</h4>
+        <h4>{work.title}</h4>
 
         <div>{`${work.exersise}`}</div>
       </li>
