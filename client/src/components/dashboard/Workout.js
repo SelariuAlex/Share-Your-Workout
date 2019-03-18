@@ -12,7 +12,7 @@ class Workout extends Component {
     const workout = this.props.workout.map(work => (
       <tr key={work._id}>
         <td>{work.title}</td>
-        <td>{work.exersise}</td>
+        <td className="fixSpace">{work.exersise}</td>
 
         <td>
           <button
