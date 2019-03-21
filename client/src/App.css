@@ -50,7 +50,9 @@ footer {
 }
 
 .logout-btn {
-  color: black !important;
+  background-color: transparent !important;
+  border: none;
+  /* color: black !important; */
 }
 
 .fixSpace {
