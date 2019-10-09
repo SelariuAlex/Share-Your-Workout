@@ -52,7 +52,7 @@ footer {
 .logout-btn {
   background-color: transparent !important;
   border: none;
-  /* color: black !important; */
+  color: black !important;
 }
 
 .fixSpace {
